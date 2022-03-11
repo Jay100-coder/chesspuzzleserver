@@ -25,7 +25,7 @@ router.get("/", cors(), async (req, res) => {
       }
     )
     .then((data) => {
-      return data.data;
+      return data.data.data;
     });
 
   let payload = {

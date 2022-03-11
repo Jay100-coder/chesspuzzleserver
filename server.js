@@ -11,7 +11,7 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-router.get("/get", cors(), async (req, res) => {
+router.get("/", cors(), async (req, res) => {
   const data = await axios
     .post(
       "https://chessblunders.org/api/blunder/get",
@@ -31,4 +31,4 @@ router.get("/get", cors(), async (req, res) => {
   res.json(data);
 });
 
-app.use("/get", router);
+app.use("/", router);

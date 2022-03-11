@@ -28,7 +28,14 @@ router.get("/", cors(), async (req, res) => {
       return data.data;
     });
 
-  res.json(data);
+  let payload = {
+    id: data.id,
+    blunderMove: data.blunderMove,
+    fen: data.fenBefore,
+    solution: data.forcedLine,
+  };
+
+  res.json(payload);
 });
 
 app.use("/", router);
